@@ -30,6 +30,7 @@ const fetchShortenedUrl = async () => {
       console.log("ERROR: ", err);
     };
   } else {
-    outputUrl.innerHTML = 'Invalid URL';
+    document.querySelector('input').value = 'https://' + url;
+    fetchShortenedUrl();
   };
 };
