@@ -2,7 +2,7 @@ import {token} from './token.js';
 
 document
   .querySelector('button')
-  .addEventListener('click', function () {
+  .addEventListener('click', () => {
     fetchShortenedUrl();
   });
 
