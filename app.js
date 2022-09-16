@@ -6,9 +6,10 @@ document
     fetchShortenedUrl();
   });
 
+const outputUrl = document.getElementById('output__url');
+
 const fetchShortenedUrl = async () => {
   const url = document.querySelector('input').value;
-  const outputUrl = document.getElementById('output__url');
   if (url && (url.startsWith('http://') || url.startsWith('https://'))) {
     try {
       const response = await fetch(`https://api-ssl.bitly.com/v4/shorten`,
@@ -34,3 +35,7 @@ const fetchShortenedUrl = async () => {
     fetchShortenedUrl();
   };
 };
+
+outputUrl.addEventListener('click', () => {
+  navigator.clipboard.writeText(outputUrl.innerHTML);
+});
