@@ -38,4 +38,8 @@ const fetchShortenedUrl = async () => {
 
 outputUrl.addEventListener('click', () => {
   navigator.clipboard.writeText(outputUrl.innerHTML);
+  outputUrl.innerHTML = 'Copied to clipboard!';
+  setTimeout(() => {
+    outputUrl.innerHTML = '';
+  }, 2000);
 });
